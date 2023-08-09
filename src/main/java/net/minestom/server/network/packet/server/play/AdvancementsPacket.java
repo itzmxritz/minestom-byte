@@ -76,7 +76,7 @@ public record AdvancementsPacket(boolean reset, @NotNull List<AdvancementMapping
      * AdvancementMapping maps the namespaced ID to the Advancement.
      */
     public record AdvancementMapping(@NotNull String key,
-                                     @NotNull Advancement value) implements NetworkBuffer.Writer, ComponentHolder<AdvancementMapping> {
+                                     @NotNull Advancement value) implements Writer, ComponentHolder<AdvancementMapping> {
         public AdvancementMapping(@NotNull NetworkBuffer reader) {
             this(reader.read(STRING), new Advancement(reader));
         }
@@ -101,7 +101,7 @@ public record AdvancementsPacket(boolean reset, @NotNull List<AdvancementMapping
     public record Advancement(@Nullable String parentIdentifier, @Nullable DisplayData displayData,
                               @NotNull List<String> criteria,
                               @NotNull List<Requirement> requirements,
-                              boolean sendTelemetryData) implements NetworkBuffer.Writer, ComponentHolder<Advancement> {
+                              boolean sendTelemetryData) implements Writer, ComponentHolder<Advancement> {
         public Advancement {
             criteria = List.copyOf(criteria);
             requirements = List.copyOf(requirements);
@@ -135,7 +135,7 @@ public record AdvancementsPacket(boolean reset, @NotNull List<AdvancementMapping
         }
     }
 
-    public record Requirement(@NotNull List<String> requirements) implements NetworkBuffer.Writer {
+    public record Requirement(@NotNull List<String> requirements) implements Writer {
         public Requirement {
             requirements = List.copyOf(requirements);
         }
@@ -153,7 +153,7 @@ public record AdvancementsPacket(boolean reset, @NotNull List<AdvancementMapping
     public record DisplayData(@NotNull Component title, @NotNull Component description,
                               @NotNull ItemStack icon, @NotNull FrameType frameType,
                               int flags, @Nullable String backgroundTexture,
-                              float x, float y) implements NetworkBuffer.Writer, ComponentHolder<DisplayData> {
+                              float x, float y) implements Writer, ComponentHolder<DisplayData> {
         public DisplayData(@NotNull NetworkBuffer reader) {
             this(read(reader));
         }
@@ -207,7 +207,7 @@ public record AdvancementsPacket(boolean reset, @NotNull List<AdvancementMapping
     }
 
     public record ProgressMapping(@NotNull String key,
-                                  @NotNull AdvancementProgress progress) implements NetworkBuffer.Writer {
+                                  @NotNull AdvancementProgress progress) implements Writer {
         public ProgressMapping(@NotNull NetworkBuffer reader) {
             this(reader.read(STRING), new AdvancementProgress(reader));
         }
@@ -219,7 +219,7 @@ public record AdvancementsPacket(boolean reset, @NotNull List<AdvancementMapping
         }
     }
 
-    public record AdvancementProgress(@NotNull List<Criteria> criteria) implements NetworkBuffer.Writer {
+    public record AdvancementProgress(@NotNull List<Criteria> criteria) implements Writer {
         public AdvancementProgress {
             criteria = List.copyOf(criteria);
         }
@@ -235,7 +235,7 @@ public record AdvancementsPacket(boolean reset, @NotNull List<AdvancementMapping
     }
 
     public record Criteria(@NotNull String criterionIdentifier,
-                           @NotNull CriterionProgress criterionProgress) implements NetworkBuffer.Writer {
+                           @NotNull CriterionProgress criterionProgress) implements Writer {
         public Criteria(@NotNull NetworkBuffer reader) {
             this(reader.read(STRING), new CriterionProgress(reader));
         }
@@ -247,7 +247,7 @@ public record AdvancementsPacket(boolean reset, @NotNull List<AdvancementMapping
         }
     }
 
-    public record CriterionProgress(@Nullable Long dateOfAchieving) implements NetworkBuffer.Writer {
+    public record CriterionProgress(@Nullable Long dateOfAchieving) implements Writer {
         public CriterionProgress(@NotNull NetworkBuffer reader) {
             this(reader.readOptional(LONG));
         }

@@ -35,14 +35,14 @@ record GraphImpl(NodeImpl root) implements Graph {
         return compare(root, graph.root(), comparator);
     }
 
-    record BuilderImpl(Argument<?> argument, List<BuilderImpl> children, Execution execution) implements Graph.Builder {
+    record BuilderImpl(Argument<?> argument, List<BuilderImpl> children, Execution execution) implements Builder {
         public BuilderImpl(Argument<?> argument, Execution execution) {
             this(argument, new ArrayList<>(), execution);
         }
 
         @Override
-        public Graph.@NotNull Builder append(@NotNull Argument<?> argument, @Nullable Execution execution,
-                                             @NotNull Consumer<Graph.Builder> consumer) {
+        public @NotNull Builder append(@NotNull Argument<?> argument, @Nullable Execution execution,
+                                       @NotNull Consumer<Builder> consumer) {
             BuilderImpl builder = new BuilderImpl(argument, execution);
             consumer.accept(builder);
             this.children.add(builder);
@@ -50,7 +50,7 @@ record GraphImpl(NodeImpl root) implements Graph {
         }
 
         @Override
-        public Graph.@NotNull Builder append(@NotNull Argument<?> argument, @Nullable Execution execution) {
+        public @NotNull Builder append(@NotNull Argument<?> argument, @Nullable Execution execution) {
             this.children.add(new BuilderImpl(argument, List.of(), execution));
             return this;
         }
@@ -61,7 +61,7 @@ record GraphImpl(NodeImpl root) implements Graph {
         }
     }
 
-    record NodeImpl(Argument<?> argument, ExecutionImpl execution, List<Graph.Node> next) implements Graph.Node {
+    record NodeImpl(Argument<?> argument, ExecutionImpl execution, List<Node> next) implements Node {
         static NodeImpl fromBuilder(BuilderImpl builder) {
             final List<BuilderImpl> children = builder.children;
             Node[] nodes = new NodeImpl[children.size()];

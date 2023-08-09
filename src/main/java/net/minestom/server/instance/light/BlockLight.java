@@ -236,7 +236,7 @@ final class BlockLight implements Light {
         Point[] neighbors = Light.getNeighbors(chunk, sectionY);
 
         ShortArrayFIFOQueue queue = buildExternalQueue(instance, blockPalette, neighbors, content);
-        LightCompute.Result result = LightCompute.compute(blockPalette, queue);
+        Result result = LightCompute.compute(blockPalette, queue);
 
         byte[] contentPropagationTemp = result.light();
 

@@ -269,7 +269,7 @@ final class SkyLight implements Light {
 
         if (!fullyLit) {
             queue = buildExternalQueue(instance, blockPalette, neighbors, content);
-            LightCompute.Result result = LightCompute.compute(blockPalette, queue);
+            Result result = LightCompute.compute(blockPalette, queue);
 
             contentPropagationTemp = result.light();
             this.contentPropagationSwap = bake(contentPropagationSwap, contentPropagationTemp);

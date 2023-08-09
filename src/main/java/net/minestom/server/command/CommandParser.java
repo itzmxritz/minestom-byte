@@ -40,7 +40,7 @@ public interface CommandParser {
         }
 
         sealed interface KnownCommand extends Result
-                permits CommandParserImpl.InternalKnownCommand, Result.KnownCommand.Invalid, Result.KnownCommand.Valid {
+                permits CommandParserImpl.InternalKnownCommand, KnownCommand.Invalid, KnownCommand.Valid {
 
             sealed interface Valid extends KnownCommand
                     permits CommandParserImpl.ValidCommand {

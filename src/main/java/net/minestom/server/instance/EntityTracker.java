@@ -93,13 +93,13 @@ public sealed interface EntityTracker permits EntityTrackerImpl {
         Target<ItemEntity> ITEMS = create(ItemEntity.class);
         Target<ExperienceOrb> EXPERIENCE_ORBS = create(ExperienceOrb.class);
 
-        List<EntityTracker.Target<? extends Entity>> TARGETS = List.of(EntityTracker.Target.ENTITIES, EntityTracker.Target.PLAYERS, EntityTracker.Target.ITEMS, EntityTracker.Target.EXPERIENCE_ORBS);
+        List<Target<? extends Entity>> TARGETS = List.of(Target.ENTITIES, Target.PLAYERS, Target.ITEMS, Target.EXPERIENCE_ORBS);
 
         Class<E> type();
 
         int ordinal();
 
-        private static <T extends Entity> EntityTracker.Target<T> create(Class<T> type) {
+        private static <T extends Entity> Target<T> create(Class<T> type) {
             final int ordinal = EntityTrackerImpl.TARGET_COUNTER.getAndIncrement();
             return new Target<>() {
                 @Override

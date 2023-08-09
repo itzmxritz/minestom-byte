@@ -36,6 +36,6 @@ public class FrogMeta extends AnimalMeta {
         WARM,
         COLD;
 
-        private final static FrogMeta.Variant[] VALUES = values();
+        private final static Variant[] VALUES = values();
     }
 }

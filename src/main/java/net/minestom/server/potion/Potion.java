@@ -12,7 +12,7 @@ import static net.minestom.server.network.NetworkBuffer.BYTE;
 import static net.minestom.server.network.NetworkBuffer.VAR_INT;
 
 /**
- * Represents a potion effect that can be added to an {@link net.minestom.server.entity.Entity}.
+ * Represents a potion effect that can be added to an {@link Entity}.
  *
  * @param effect    the potion effect
  * @param amplifier the amplifier starting at 0 (level 1)

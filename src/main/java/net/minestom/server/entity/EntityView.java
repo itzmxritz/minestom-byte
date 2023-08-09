@@ -126,7 +126,7 @@ final class EntityView {
 
     public final class Option<T extends Entity> {
         @SuppressWarnings("rawtypes")
-        private static final AtomicIntegerFieldUpdater<EntityView.Option> UPDATER = AtomicIntegerFieldUpdater.newUpdater(EntityView.Option.class, "auto");
+        private static final AtomicIntegerFieldUpdater<Option> UPDATER = AtomicIntegerFieldUpdater.newUpdater(Option.class, "auto");
         // Entities that should be tracked from this option
         private final EntityTracker.Target<T> target;
         // The condition that must be met for this option to be considered auto.

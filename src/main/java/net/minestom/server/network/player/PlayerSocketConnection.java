@@ -290,7 +290,7 @@ public class PlayerSocketConnection extends PlayerConnection {
     /**
      * Adds an entry to the plugin request map.
      * <p>
-     * Only working if {@link #getConnectionState()} is {@link net.minestom.server.network.ConnectionState#LOGIN}.
+     * Only working if {@link #getConnectionState()} is {@link ConnectionState#LOGIN}.
      *
      * @param messageId the message id
      * @param channel   the packet channel

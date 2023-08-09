@@ -270,87 +270,87 @@ public class DimensionType {
         DimensionTypeBuilder() {
         }
 
-        public DimensionType.DimensionTypeBuilder name(NamespaceID name) {
+        public DimensionTypeBuilder name(NamespaceID name) {
             this.name = name;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder natural(boolean natural) {
+        public DimensionTypeBuilder natural(boolean natural) {
             this.natural = natural;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder ambientLight(float ambientLight) {
+        public DimensionTypeBuilder ambientLight(float ambientLight) {
             this.ambientLight = ambientLight;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder ceilingEnabled(boolean ceilingEnabled) {
+        public DimensionTypeBuilder ceilingEnabled(boolean ceilingEnabled) {
             this.ceilingEnabled = ceilingEnabled;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder skylightEnabled(boolean skylightEnabled) {
+        public DimensionTypeBuilder skylightEnabled(boolean skylightEnabled) {
             this.skylightEnabled = skylightEnabled;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder fixedTime(Long fixedTime) {
+        public DimensionTypeBuilder fixedTime(Long fixedTime) {
             this.fixedTime = fixedTime;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder raidCapable(boolean raidCapable) {
+        public DimensionTypeBuilder raidCapable(boolean raidCapable) {
             this.raidCapable = raidCapable;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder respawnAnchorSafe(boolean respawnAnchorSafe) {
+        public DimensionTypeBuilder respawnAnchorSafe(boolean respawnAnchorSafe) {
             this.respawnAnchorSafe = respawnAnchorSafe;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder ultrawarm(boolean ultrawarm) {
+        public DimensionTypeBuilder ultrawarm(boolean ultrawarm) {
             this.ultrawarm = ultrawarm;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder bedSafe(boolean bedSafe) {
+        public DimensionTypeBuilder bedSafe(boolean bedSafe) {
             this.bedSafe = bedSafe;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder effects(String effects) {
+        public DimensionTypeBuilder effects(String effects) {
             this.effects = effects;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder piglinSafe(boolean piglinSafe) {
+        public DimensionTypeBuilder piglinSafe(boolean piglinSafe) {
             this.piglinSafe = piglinSafe;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder minY(int minY) {
+        public DimensionTypeBuilder minY(int minY) {
             this.minY = minY;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder height(int height) {
+        public DimensionTypeBuilder height(int height) {
             this.height = height;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder logicalHeight(int logicalHeight) {
+        public DimensionTypeBuilder logicalHeight(int logicalHeight) {
             this.logicalHeight = logicalHeight;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder coordinateScale(double coordinateScale) {
+        public DimensionTypeBuilder coordinateScale(double coordinateScale) {
             this.coordinateScale = coordinateScale;
             return this;
         }
 
-        public DimensionType.DimensionTypeBuilder infiniburn(NamespaceID infiniburn) {
+        public DimensionTypeBuilder infiniburn(NamespaceID infiniburn) {
             this.infiniburn = infiniburn;
             return this;
         }

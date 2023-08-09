@@ -96,7 +96,7 @@ public record EncryptionResponsePacket(byte[] sharedSecret,
                         return;
                     }
                     socketConnection.setEncryptionKey(getSecretKey());
-                    UUID profileUUID = java.util.UUID.fromString(gameProfile.get("id").getAsString()
+                    UUID profileUUID = UUID.fromString(gameProfile.get("id").getAsString()
                             .replaceFirst("(\\w{8})(\\w{4})(\\w{4})(\\w{4})(\\w{12})", "$1-$2-$3-$4-$5"));
                     final String profileName = gameProfile.get("name").getAsString();
 

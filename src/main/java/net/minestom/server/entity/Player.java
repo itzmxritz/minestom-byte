@@ -406,7 +406,7 @@ public class Player extends LivingEntity implements CommandSender, Localizable, 
                 Check.notNull(itemUpdateStateEvent, "#callItemUpdateStateEvent returned null.");
 
                 // Refresh hand
-                final boolean isOffHand = itemUpdateStateEvent.getHand() == Player.Hand.OFF;
+                final boolean isOffHand = itemUpdateStateEvent.getHand() == Hand.OFF;
                 refreshActiveHand(false, isOffHand, false);
 
                 final ItemStack foodItem = itemUpdateStateEvent.getItemStack();

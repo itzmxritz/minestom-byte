@@ -24,8 +24,8 @@ public interface EventListener<T extends Event> {
     @NotNull Result run(@NotNull T event);
 
     @Contract(pure = true)
-    static <T extends Event> EventListener.@NotNull Builder<T> builder(@NotNull Class<T> eventType) {
-        return new EventListener.Builder<>(eventType);
+    static @NotNull <T extends Event> Builder<T> builder(@NotNull Class<T> eventType) {
+        return new Builder<>(eventType);
     }
 
     /**

@@ -44,6 +44,6 @@ public class AxolotlMeta extends AnimalMeta {
         CYAN,
         BLUE;
 
-        private final static AxolotlMeta.Variant[] VALUES = values();
+        private final static Variant[] VALUES = values();
     }
 }

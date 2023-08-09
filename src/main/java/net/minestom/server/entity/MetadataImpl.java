@@ -18,7 +18,7 @@ import static net.minestom.server.entity.Metadata.*;
 import static net.minestom.server.network.NetworkBuffer.VAR_INT;
 
 final class MetadataImpl {
-    static final ObjectArray<Metadata.Entry<?>> EMPTY_VALUES = ObjectArray.singleThread(20);
+    static final ObjectArray<Entry<?>> EMPTY_VALUES = ObjectArray.singleThread(20);
 
     static {
         EMPTY_VALUES.set(TYPE_BYTE, Byte((byte) 0));
@@ -44,7 +44,7 @@ final class MetadataImpl {
     }
 
     record EntryImpl<T>(int type, @UnknownNullability T value,
-                        @NotNull NetworkBuffer.Type<T> serializer) implements Metadata.Entry<T> {
+                        @NotNull NetworkBuffer.Type<T> serializer) implements Entry<T> {
         static Entry<?> read(int type, @NotNull NetworkBuffer reader) {
             final EntryImpl<?> value = (EntryImpl<?>) EMPTY_VALUES.get(type);
             if (value == null) throw new UnsupportedOperationException("Unknown value type: " + type);

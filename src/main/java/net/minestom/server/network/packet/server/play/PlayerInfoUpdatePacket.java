@@ -112,7 +112,7 @@ public final class PlayerInfoUpdatePacket implements ServerPacket {
     }
 
     public record Property(@NotNull String name, @NotNull String value,
-                           @Nullable String signature) implements NetworkBuffer.Writer {
+                           @Nullable String signature) implements Writer {
         public Property(@NotNull String name, @NotNull String value) {
             this(name, value, null);
         }

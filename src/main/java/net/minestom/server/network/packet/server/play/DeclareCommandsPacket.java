@@ -37,7 +37,7 @@ public record DeclareCommandsPacket(@NotNull List<Node> nodes,
         return ServerPacketIdentifier.DECLARE_COMMANDS;
     }
 
-    public static final class Node implements NetworkBuffer.Writer {
+    public static final class Node implements Writer {
         public byte flags;
         public int[] children = new int[0];
         public int redirectedNode; // Only if flags & 0x08

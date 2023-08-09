@@ -13,7 +13,7 @@ public record LightData(
         @NotNull BitSet emptySkyMask, @NotNull BitSet emptyBlockMask,
         @NotNull List<byte[]> skyLight,
         @NotNull List<byte[]> blockLight
-) implements NetworkBuffer.Writer {
+) implements Writer {
     public LightData(@NotNull NetworkBuffer reader) {
         this(
                 BitSet.valueOf(reader.read(LONG_ARRAY)), BitSet.valueOf(reader.read(LONG_ARRAY)),

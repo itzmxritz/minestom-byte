@@ -31,7 +31,7 @@ final class EntityTrackerImpl implements EntityTracker {
 
     // Store all data associated to a Target
     // The array index is the Target enum ordinal
-    final TargetEntry<Entity>[] entries = EntityTracker.Target.TARGETS.stream().map((Function<Target<?>, TargetEntry>) TargetEntry::new).toArray(TargetEntry[]::new);
+    final TargetEntry<Entity>[] entries = Target.TARGETS.stream().map((Function<Target<?>, TargetEntry>) TargetEntry::new).toArray(TargetEntry[]::new);
     private final Int2ObjectSyncMap<Point> entityPositions = Int2ObjectSyncMap.hashmap();
 
     @Override
@@ -206,7 +206,7 @@ final class EntityTrackerImpl implements EntityTracker {
     }
 
     static final class TargetEntry<T extends Entity> {
-        private final EntityTracker.Target<T> target;
+        private final Target<T> target;
         private final Set<T> entities = ConcurrentHashMap.newKeySet(); // Thread-safe since exposed
         private final Set<T> entitiesView = Collections.unmodifiableSet(entities);
         // Chunk index -> entities inside it
@@ -276,7 +276,7 @@ final class EntityTrackerImpl implements EntityTracker {
 
         private void collectPlayers(EntityTracker tracker, Int2ObjectOpenHashMap<Player> map) {
             tracker.nearbyEntitiesByChunkRange(point, MinecraftServer.getChunkViewDistance(),
-                    EntityTracker.Target.PLAYERS, (player) -> map.putIfAbsent(player.getEntityId(), player));
+                    Target.PLAYERS, (player) -> map.putIfAbsent(player.getEntityId(), player));
         }
 
         final class SetImpl extends AbstractSet<Player> {

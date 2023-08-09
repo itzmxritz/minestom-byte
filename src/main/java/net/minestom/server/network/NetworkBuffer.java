@@ -170,7 +170,7 @@ public final class NetworkBuffer {
 
     public <T> @NotNull List<@NotNull T> readCollection(@NotNull Type<T> type) {
         final int size = read(VAR_INT);
-        final List<T> values = new java.util.ArrayList<>(size);
+        final List<T> values = new ArrayList<>(size);
         for (int i = 0; i < size; i++) {
             values.add(read(type));
         }
@@ -179,7 +179,7 @@ public final class NetworkBuffer {
 
     public <T> @NotNull List<@NotNull T> readCollection(@NotNull Function<@NotNull NetworkBuffer, @NotNull T> function) {
         final int size = read(VAR_INT);
-        final List<T> values = new java.util.ArrayList<>(size);
+        final List<T> values = new ArrayList<>(size);
         for (int i = 0; i < size; i++) {
             values.add(function.apply(this));
         }

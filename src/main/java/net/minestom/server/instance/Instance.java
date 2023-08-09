@@ -475,6 +475,14 @@ public abstract class Instance implements Block.Getter, Block.Setter,
     }
 
     /**
+     * Disable time changing
+     * <p>
+     */
+    public void disableTimeRate() {
+        this.setTimeRate(0);
+    }
+
+    /**
      * Gets the rate at which the client is updated with the current instance time
      *
      * @return the client update rate for time related packet

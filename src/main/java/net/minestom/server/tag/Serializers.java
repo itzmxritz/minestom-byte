@@ -31,7 +31,7 @@ final class Serializers {
     static final Entry<Object, NBTByte> EMPTY = new Entry<>(NBTType.TAG_Byte, unused -> null, component -> null);
 
     static <T> Entry<T, NBTCompound> fromTagSerializer(TagSerializer<T> serializer) {
-        return new Serializers.Entry<>(NBTType.TAG_Compound,
+        return new Entry<>(NBTType.TAG_Compound,
                 (NBTCompound compound) -> {
                     if (compound.isEmpty()) return null;
                     return serializer.read(TagHandler.fromCompound(compound));
