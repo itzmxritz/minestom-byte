@@ -129,7 +129,7 @@
         <dependency>
             <groupId>dev.hollowcube</groupId>
             <artifactId>minestom-ce-data</artifactId>
-            <version>1.20-rv2</version>
+            <version>627cce9160+1.19.3</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
