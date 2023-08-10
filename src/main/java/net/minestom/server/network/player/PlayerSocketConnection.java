@@ -341,8 +341,12 @@ public class PlayerSocketConnection extends PlayerConnection {
             final ServerPacket serverPacket = SendablePacket.extractServerPacket(packet);
             PlayerPacketOutEvent event = new PlayerPacketOutEvent(player, serverPacket);
             outgoing.call(event);
-            if (event.isCancelled()) return;
+        } else {
+            writeAbstractPacketSync(packet, compressed);
         }
+    }
+
+    private void writeAbstractPacketSync(SendablePacket packet, boolean compressed) {
         // Write packet
         if (packet instanceof ServerPacket serverPacket) {
             writeServerPacketSync(serverPacket, compressed);
