@@ -117,7 +117,7 @@
         <dependency>
             <groupId>com.github.MadMartian</groupId>
             <artifactId>hydrazine-path-finding</artifactId>
-            <version>1.7.2</version>
+            <version>1.8.1</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
