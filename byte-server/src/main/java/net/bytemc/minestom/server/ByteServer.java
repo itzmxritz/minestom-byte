@@ -2,7 +2,7 @@ package net.bytemc.minestom.server;
 
 import lombok.Getter;
 import net.bytemc.minestom.server.instances.BlockHandlers;
-import net.bytemc.minestom.server.instances.InstanceSeverHandler;
+import net.bytemc.minestom.server.instances.InstanceServerHandler;
 import net.bytemc.minestom.server.instances.InstanceType;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.extras.optifine.OptifineSupport;
@@ -16,14 +16,14 @@ public final class ByteServer {
     private static ByteServer instance;
 
     @Getter
-    private final InstanceSeverHandler instanceSeverHandler;
+    private final InstanceServerHandler instanceServerHandler;
 
     public ByteServer(String[] arguments) {
 
         instance = this;
 
         var minecraftServer = MinecraftServer.init();
-        this.instanceSeverHandler = new InstanceSeverHandler();
+        this.instanceServerHandler = new InstanceServerHandler();
 
 
         MinecraftServer.getBlockManager().registerHandler(NamespaceID.from("minecraft:skull"), () ->  BlockHandlers.SKULL_HANDLER);
@@ -51,7 +51,7 @@ public final class ByteServer {
         }
         MinecraftServer.LOGGER.info("Using port: " + port + " | Using hostname: " + MinecraftServer.getServer().getAddress());
 
-        Instance polo = this.instanceSeverHandler.createInstance("polo", InstanceType.FLAT);
-        this.instanceSeverHandler.setSpawningInstance(polo);
+        Instance polo = this.instanceServerHandler.createInstance("polo", InstanceType.FLAT);
+        this.instanceServerHandler.setSpawningInstance(polo);
     }
 }
