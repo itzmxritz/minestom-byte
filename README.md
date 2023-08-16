@@ -8,6 +8,9 @@ Add object implementation:
 - `Sign`
 - `Banner`
 
+Download Byte-Server here: 
+https://artifactory.bytemc.de/ui/native/bytemc-public/net/bytemc/byte-server/1.0.0-SNAPSHOT/byte-server-1.0.0-SNAPSHOT.jar
+
 Repository: 
 ```xml
 <repositories>
